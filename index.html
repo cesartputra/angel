@@ -62,15 +62,22 @@
                 <h1 id="ask">Would you be mine, aisyah angelia?</h1>
                 <br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-4">
+                    <div class="col-md-6" id="yesBtnContainer">
                         <button id="yesBtn" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: green; font-size: 25px;"><i class="fas fa-smile"></i> Yes</button>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6" id="noBtnContainer">
                         <button id="noBtn" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: red; font-size: 25px;"><i class="fas fa-frown"></i> No</button>
+                    </div>
+                    <div class="col-md-6" id="noBtnContainer2">
+                        <button id="noBtn2" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: red; font-size: 25px;"><i class="fas fa-frown"></i> No</button>
+                    </div>
+                    <div class="col-md-6" id="noBtnContainer3">
+                        <button id="noBtn3" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: red; font-size: 25px;"><i class="fas fa-frown"></i> No</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center" id="yesContainer">
+                <img src="flowers.png" alt="">
                 <h1 id="yesOpening" style="color: green;">It's a YES!!!!</h1>
                 <h1 id="yesAnswer">Cesar - Angel</h1>
                 <h4 id="yesDate"></h4>
@@ -85,19 +92,34 @@
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
     
     <script>
-        $('#noBtn').hover(function () {
-                // over
-                $('#noBtn').hide();
-            }, function () {
-                // out
-                $('#noBtn').show();
-            }
-        );
+        // $('#noBtn').hover(function () {
+        //         // over
+        //         $('#noBtn').hide();
+        //     }, function () {
+        //         // out
+        //         $('#noBtn').show();
+        //     }
+        // );
+        $('#noBtn').mouseover(function () { 
+            $('#noBtn').hide();
+            $('#noBtn2').show();
+        });
+        $('#noBtn2').mouseover(function () { 
+            $('#noBtn2').hide();
+            $('#noBtn3').show();
+        });
+        $('#noBtn3').mouseover(function () { 
+            $('#noBtn3').hide();
+            $('#noBtn').show();
+        });
 
         $(document).ready(function () {
             $(this).scrollTop(0);
 
             $('#yesContainer').hide();
+            $('#noBtn2').hide();
+            $('#noBtn3').hide();
+            // $('#yesBtnContainer').append('');
         });
 
         function displayDate() {
@@ -125,7 +147,7 @@
 
         $('#noBtn').click(function (e) { 
             e.preventDefault();
-            console.log('no');
+            console.log((this).before());
         });
 
         
