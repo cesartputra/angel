@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/28e59fe8f6.js" crossorigin="anonymous"></script>
+    <title>Dear Aisyah Angelia</title>
+</head>
+<body>
+    <div class="zero container-fluid d-flex justify-content-center align-items-center" id="zero">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Dear Aisyah angelia</h1>
+                
+                <br>
+                
+                <a name="" id="" class="btn" href="#first" role="button"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="first container-fluid d-flex justify-content-center align-items-center" id="first">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Let me be the one to share your dreams</h1>
+                <h1>Be the one who fly you to the stars</h1>
+                <br>
+                
+                <a name="" id="" class="btn" href="#firstpoint5" role="button"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="firstpoint5 container-fluid d-flex justify-content-center align-items-center" id="firstpoint5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 text-center ">
+                <h1>Share your fears and wipe your tears to live in truth with you</h1>
+                <br>
+                
+                <a name="" id="" class="btn" href="#second" role="button"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="second container-fluid d-flex justify-content-center align-items-center" id="second">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Let me be the one to share your world</h1>
+                <h1>Simply be my one and only love</h1>
+                <br>
+                <a name="" id="" class="btn" href="#third" role="button"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="third container-fluid d-flex justify-content-center align-items-center" id="third">
+        <div class="row">
+            <div class="col-md-12 text-center" id="askContainer">
+                <h1 id="ask">Would you be mine, aisyah angelia?</h1>
+                <br>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4">
+                        <button id="yesBtn" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: green; font-size: 25px;"><i class="fas fa-smile"></i> Yes</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="noBtn" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: red; font-size: 25px;"><i class="fas fa-frown"></i> No</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center" id="yesContainer">
+                <h1 id="yesOpening" style="color: green;">It's a YES!!!!</h1>
+                <h1 id="yesAnswer">Cesar - Angel</h1>
+                <h4 id="yesDate"></h4>
+            </div>
+
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    
+    <script>
+        $('#noBtn').hover(function () {
+                // over
+                $('#noBtn').hide();
+            }, function () {
+                // out
+                $('#noBtn').show();
+            }
+        );
+
+        $(document).ready(function () {
+            $(this).scrollTop(0);
+
+            $('#yesContainer').hide();
+        });
+
+        function displayDate() {
+            let nowDate = new Date()
+            nowDate = nowDate.toLocaleString("id-ID")
+            // let displayDate = nowDate.toUTCString()
+            $('#displayDate').html(nowDate);
+            
+        }
+
+        $('#yesBtn').click(function (e) { 
+            e.preventDefault();
+            
+            $('#askContainer').hide();
+
+            // party.confetti(this)
+            $.getScript("confetti.js");
+            $('#yesContainer').fadeIn();
+
+            let nowDate = new Date()
+            nowDate = nowDate.toLocaleString("id-ID")
+            $('#yesDate').html(nowDate);
+            // $('#yesDate').show();
+        });
+
+        $('#noBtn').click(function (e) { 
+            e.preventDefault();
+            console.log('no');
+        });
+
+        
+    </script>
+</body>
+</html>
