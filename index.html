@@ -93,10 +93,17 @@
     <div class="fourth container-fluid d-flex justify-content-center align-items-center" id="fourth">
         <div class="row">
             <div class="col-md-12 text-center" id="yesContainer">
-                <img src="flowers.png" alt="">
+                <img src="flowers.png" width="100%" alt="">
                 <h1 id="yesOpening" style="color: green;">It's a YES!!!!</h1>
                 <h1 id="yesAnswer">Cesar - Angel</h1>
                 <h4 id="yesDate">17/8/2022 17.58.33</h4>
+            </div>
+        </div>
+    </div>
+    <div class="fifth container-fluid d-flex justify-content-center align-items-center" id="fifth">
+        <div class="row">
+            <div class="col-md-12 text-center" id="yesContainer">
+                <p id="copyright"></p>
             </div>
         </div>
     </div>
@@ -131,6 +138,10 @@
 
         $(document).ready(function () {
             $(this).scrollTop(0);
+
+            let year = new Date().getFullYear()
+
+            $('#copyright').html(`©${year} by cesar t. putra`);
 
             // $('#yesContainer').hide();
             // $('#noBtn2').hide();
