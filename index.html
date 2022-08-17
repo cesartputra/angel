@@ -72,7 +72,8 @@
             <div class="col-md-12 text-center" id="askContainer">
                 <h1 id="ask">Would you be mine, aisyah angelia?</h1>
                 <br>
-                <div class="row d-flex justify-content-center">
+                <a name="" id="" class="btn" href="#fourth" role="button"><i class="fas fa-chevron-down"></i></a>
+                <!-- <div class="row d-flex justify-content-center">
                     <div class="col-md-6" id="yesBtnContainer">
                         <button id="yesBtn" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: green; font-size: 25px;"><i class="fas fa-smile"></i> Yes</button>
                     </div>
@@ -85,15 +86,18 @@
                     <div class="col-md-6" id="noBtnContainer3">
                         <button id="noBtn3" type="button" class="btn " data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="color: red; font-size: 25px;"><i class="fas fa-frown"></i> No</button>
                     </div>
-                </div>
+                </div> -->
             </div>
+        </div>
+    </div>
+    <div class="fourth container-fluid d-flex justify-content-center align-items-center" id="fourth">
+        <div class="row">
             <div class="col-md-12 text-center" id="yesContainer">
                 <img src="flowers.png" alt="">
                 <h1 id="yesOpening" style="color: green;">It's a YES!!!!</h1>
                 <h1 id="yesAnswer">Cesar - Angel</h1>
-                <h4 id="yesDate"></h4>
+                <h4 id="yesDate">17/8/2022 17.58.33</h4>
             </div>
-
         </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
@@ -101,7 +105,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
-    
+    <script src="confetti.js"></script>
+
     <script>
         // $('#noBtn').hover(function () {
         //         // over
@@ -127,39 +132,39 @@
         $(document).ready(function () {
             $(this).scrollTop(0);
 
-            $('#yesContainer').hide();
-            $('#noBtn2').hide();
-            $('#noBtn3').hide();
+            // $('#yesContainer').hide();
+            // $('#noBtn2').hide();
+            // $('#noBtn3').hide();
             // $('#yesBtnContainer').append('');
         });
 
-        function displayDate() {
-            let nowDate = new Date()
-            nowDate = nowDate.toLocaleString("id-ID")
-            // let displayDate = nowDate.toUTCString()
-            $('#displayDate').html(nowDate);
+        // function displayDate() {
+        //     let nowDate = new Date()
+        //     nowDate = nowDate.toLocaleString("id-ID")
+        //     // let displayDate = nowDate.toUTCString()
+        //     $('#displayDate').html(nowDate);
             
-        }
+        // }
 
-        $('#yesBtn').click(function (e) { 
-            e.preventDefault();
+        // $('#yesBtn').click(function (e) { 
+        //     e.preventDefault();
             
-            $('#askContainer').hide();
+        //     $('#askContainer').hide();
 
-            // party.confetti(this)
-            $.getScript("confetti.js");
-            $('#yesContainer').fadeIn();
+        //     // party.confetti(this)
+        //     $.getScript("confetti.js");
+        //     $('#yesContainer').fadeIn();
 
-            let nowDate = new Date()
-            nowDate = nowDate.toLocaleString("id-ID")
-            $('#yesDate').html(nowDate);
-            // $('#yesDate').show();
-        });
+        //     let nowDate = new Date()
+        //     nowDate = nowDate.toLocaleString("id-ID")
+        //     $('#yesDate').html(nowDate);
+        //     // $('#yesDate').show();
+        // });
 
-        $('#noBtn').click(function (e) { 
-            e.preventDefault();
-            console.log((this).before());
-        });
+        // $('#noBtn').click(function (e) { 
+        //     e.preventDefault();
+        //     console.log((this).before());
+        // });
 
         
     </script>
