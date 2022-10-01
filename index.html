@@ -98,7 +98,8 @@
                 <img  src="cesar-angel.jpg" alt="" id="usPhoto">
                 <h1 id="yesOpening" style="color: green;">It's a YES!!!!</h1>
                 <h1 id="yesAnswer">Cesar - Angel</h1>
-                <h4 id="yesDate">17/8/2022 17.58.33</h4>
+                <!-- <h4 id="yesDate">17/8/2022 17.58.33</h4> -->
+                <h4 id="yesDate"></h4>
             </div>
         </div>
     </div>
@@ -138,14 +139,38 @@
             $(this).scrollTop(0);
 
             let year = new Date().getFullYear()
+            // let month = String(new Date().getMonth()+1).padStart(2, '0')
+            // let day = String(new Date().getDate()).padStart(2, '0')
+
+            // let nowDate = String(day + '/' + month + '/' + year)
+
+            // let days = getDate('17/08/22', nowDate)
+            const oneDay = 24 * 60 * 60 * 1000
+            const startDate = new Date(2022, 7, 17)
+            let nowDate = new Date()
+            
+            let days = Math.round(Math.abs((startDate - nowDate) / oneDay))
 
             $('#copyright').html(`©${year} by cesar t. putra`);
+            // $('#yesDate').html(`${day}, ${month}, ${year}`);
+            $('#yesDate').html(`17/08/2022 17.58.33(${days} days)`);
 
             // $('#yesContainer').hide();
             // $('#noBtn2').hide();
             // $('#noBtn3').hide();
             // $('#yesBtnContainer').append('');
         });
+
+        function getDate(startDate, endDate) {
+            const startD = new Date(startDate)
+            let endD = new Date(endDate)
+
+            const oneDay = 1000 * 60 * 60 * 24
+            let diffTime = endD.getTime() - startD.getTime()
+            let diffDays = Math.round(diffTime / oneDay)
+
+            return diffDays
+        }
 
         // function displayDate() {
         //     let nowDate = new Date()
